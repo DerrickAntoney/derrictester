@@ -26,7 +26,7 @@ import { FormsModule } from '@angular/forms';
       <p *ngIf="errorMessage">{{ errorMessage }}</p>
     </div>
   `,
-  styles: ``
+  styleUrls: ['create-post.component.css']
 })
 export class CreatePostComponent {
   userId: string | null = null;

@@ -13,17 +13,15 @@ import { Photo } from '../data.model';
   template: `
     <div *ngIf="loading">Loading...</div>
       <div *ngIf="error" class="error">{{ error }}</div>
-      <div *ngIf="!loading && !error">
+      <div class="photos" *ngIf="!loading && !error">
         <h2>{{ album?.title }}</h2>
-        <div class="photos">
+        <div >
           <div *ngFor="let photo of photos" class="photo-item">
             <img [src]="photo.url" [alt]="photo.title" [loading]="'lazy'" class="photo" />
             <p>{{ photo.title }}</p>
           </div>
         </div>
       </div>
-
-
   `,
   styles: ['album.component.css'],
 })

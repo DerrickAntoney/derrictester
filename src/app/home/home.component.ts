@@ -13,6 +13,11 @@ import { Router } from '@angular/router';
       <div *ngIf="error" class="error">{{ error }}</div>
       <div *ngIf="!loading && !error">
         <h1>Users and Their Albums</h1>
+        <a onclick="['/']">        
+          <header class="brand-name">          
+            <div>Logout</div>
+          </header>      
+        </a>
         <div class='user'*ngFor="let user of usersWithAlbums">
           <h2 (click)="viewUserProfile(user.id)">{{ user.name }}</h2>
           <img [src]="getAvatarUrl('avatar.eps')" alt="{{ user.name }}'s avatar" class="avatar" />
