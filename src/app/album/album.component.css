@@ -1,0 +1,40 @@
+.photos {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
+    padding: 10px;
+    justify-content: center;
+  }
+  
+  .photo-item {
+    flex: 1 1 calc(25% - 30px); /* Adjust the percentage for different column counts */
+    box-sizing: border-box;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    overflow: hidden;
+    text-align: center;
+    background-color: #f9f9f9;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+  
+  .photo-item:hover {
+    transform: scale(1.05);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  }
+  
+  .photo {
+    width: 30%;
+    height: auto;
+    display: block;
+  }
+  
+  .error {
+    color: red;
+    font-weight: bold;
+    text-align: center;
+    padding: 20px;
+    background-color: #ffe6e6;
+    border: 1px solid #ffcccc;
+    border-radius: 4px;
+  }
+  

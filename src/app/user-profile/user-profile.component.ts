@@ -11,33 +11,29 @@ import { Post, Album } from '../data.model';
   standalone: true,
   imports: [CommonModule],
   template: `
-    <div *ngIf="loading">Loading...</div>
-    <div *ngIf="error" class="error">{{ error }}</div>
-    <div *ngIf="!loading && !error">
-      <h2>{{ user?.name }}</h2>
-      <p>Website: {{ user?.website }}</p>
-      <button (click)="createPost()">Create New Post</button>
-      <h3>Posts</h3>
-      <ul>
-        <li *ngFor="let post of posts">
-          <h4>{{ post.title }}</h4>
-          <p>{{ post.body }}</p>
-        </li>
-      </ul>
-      <h3>Albums</h3>
-      <ul>
-        <li *ngFor="let album of albums">
-          {{ album.title }}
-        </li>
-      </ul>
-    </div>
+    <div *ngIf="loading" class="loading">Loading...</div>
+      <div *ngIf="error" class="error">{{ error }}</div>
+      <div *ngIf="!loading && !error" class="profile-container">
+        <h2 class="user-name">{{ user?.name }}</h2>
+        <p class="user-website">Website: <a [href]="user?.website" target="_blank">{{ user?.website }}</a></p>
+        <button class="create-post-button" (click)="createPost()">Create New Post</button>
+        <h3>Albums</h3>
+        <ul class="album-list">
+          <li *ngFor="let album of albums" class="album-item" (click)="viewAlbum(album.id)">
+            {{ album.title }}
+          </li>
+        </ul>
+        <h3>Posts</h3>
+        <ul class="post-list">
+          <li *ngFor="let post of posts" class="post-item">
+            <h4 class="post-title">{{ post.title }}</h4>
+            <p class="post-body">{{ post.body }}</p>
+          </li>
+        </ul>
+      </div>
+
   `,
-  styles: [`
-    .error {
-      color: red;
-    }
-    /* Additional styling can be added here */
-  `]
+  styleUrls: ['user-profile.component.css']
 })
 export class UserProfileComponent implements OnInit {
   userId: string | null = null;
@@ -83,5 +79,9 @@ export class UserProfileComponent implements OnInit {
     if (this.userId) {
       this.router.navigate([`/create-post/${this.userId}`]);
     }
+  }
+
+  viewAlbum(albumId: number): void {
+    this.router.navigate([`/album/${albumId}`]);
   }
 }

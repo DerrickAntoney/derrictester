@@ -4,6 +4,7 @@ import { LoginComponent } from "./login/login.component";
 import {Routes} from '@angular/router';
 import { UserProfileComponent } from "./user-profile/user-profile.component";
 import { CreatePostComponent } from "./create-post/create-post.component";
+import { AlbumComponent } from "./album/album.component";
 
 const routeConfig: Routes = [
     {
@@ -30,6 +31,11 @@ const routeConfig: Routes = [
       path: 'create-post/:id',
       component: CreatePostComponent,
       title: 'Create Post',
-    }
+    },
+    {
+      path: 'album/:id',
+      component: AlbumComponent,
+      title: 'User Profile',
+    },
   ];
   export default routeConfig;

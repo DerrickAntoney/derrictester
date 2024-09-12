@@ -1,0 +1,101 @@
+/* Styles for the loading state */
+.loading {
+    font-size: 1.5em;
+    color: #007bff;
+    text-align: center;
+    padding: 20px;
+  }
+  
+  /* Styles for error messages */
+  .error {
+    color: red;
+    font-weight: bold;
+    text-align: center;
+    padding: 20px;
+  }
+  
+  /* Container for user profile information */
+  .profile-container {
+    padding: 20px;
+    background-color: #f9f9f9;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    max-width: 600px;
+    margin: auto;
+  }
+  
+  /* User name styling */
+  .user-name {
+    font-size: 2em;
+    margin-bottom: 10px;
+  }
+  
+  /* User website link styling */
+  .user-website {
+    font-size: 1.1em;
+    margin-bottom: 20px;
+  }
+  
+  .user-website a {
+    color: #007bff;
+    text-decoration: none;
+  }
+  
+  .user-website a:hover {
+    text-decoration: underline;
+  }
+  
+  /* Button styling */
+  .create-post-button {
+    background-color: #007bff;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1em;
+    margin-bottom: 20px;
+  }
+  
+  .create-post-button:hover {
+    background-color: #0056b3;
+  }
+  
+  /* Post list styling */
+  .post-list {
+    list-style-type: none;
+    padding: 0;
+  }
+  
+  .post-item {
+    background-color: #fff;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    margin-bottom: 10px;
+    padding: 10px;
+  }
+  
+  .post-title {
+    margin: 0;
+    font-size: 1.2em;
+  }
+  
+  .post-body {
+    margin: 0;
+    font-size: 1em;
+  }
+  
+  /* Album list styling */
+  .album-list {
+    list-style-type: none;
+    padding: 0;
+  }
+  
+  .album-item {
+    background-color: #fff;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    padding: 10px;
+    margin-bottom: 10px;
+  }
+  
