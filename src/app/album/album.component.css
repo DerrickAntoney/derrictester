@@ -1,52 +1,52 @@
+/* Container for the entire section */
 .photos {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 10px; /* Adjust gap between photos */
-    justify-content: center;
-    padding: 10px;
-  }
-  
-  .photo-item {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    box-sizing: border-box;
-    width: 30px; /* Fixed width for each photo item */
-    height: 30px; /* Fixed height for each photo item */
-  }
-  
-  .photo {
-    width: 100%;
-    height: 100%;
-    object-fit: cover; /* Ensures the photo covers the container */
-  }
-  
-  .error {
-    color: red;
-    font-weight: bold;
-    text-align: center;
-    padding: 20px;
-    background-color: #ffe6e6;
-    border: 1px solid #ffcccc;
-    border-radius: 4px;
-  }
-  
-  /* Media Queries */
-  
-  /* For medium and larger screens */
-  @media (min-width: 768px) {
-    .photo-item {
-      width: calc(33.333% - 10px); /* 3 photos per row with gap */
-      height: auto;
-    }
-  }
-  
-  /* For small screens */
-  @media (max-width: 767px) {
-    .photo-item {
-      width: 100%; /* 1 photo per row */
-      height: auto;
-    }
-  }
-  
+  max-width: 300px;
+  margin: auto;
+  padding: 20px;
+  /* Use CSS Grid to lay out photos */
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(150px, 1fr)); /* Responsive grid columns */
+  gap: 10px; /* Space between grid items */
+}
+
+/* Style each photo item */
+.photo-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  overflow: hidden;
+  background-color: #fff;
+  padding: 10px;
+}
+
+/* Style for photo image */
+.photo {
+  width: 100%;
+  height: auto;
+  object-fit: cover; /* Make sure images cover the area */
+}
+
+/* Style for photo title */
+.photo-item p {
+  margin-top: 8px;
+  text-align: center;
+  font-size: 14px;
+  color: #333;
+}
+
+/* Error message styling */
+.error {
+  color: red;
+  font-weight: bold;
+  text-align: center;
+  margin-top: 20px;
+}
+
+/* Loading indicator styling */
+.loading {
+  text-align: center;
+  font-size: 18px;
+  color: #555;
+}

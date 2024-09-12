@@ -12,15 +12,10 @@ import { Router } from '@angular/router';
     <div *ngIf="loading">Loading...</div>
       <div *ngIf="error" class="error">{{ error }}</div>
       <div *ngIf="!loading && !error">
-        <h1>Users and Their Albums</h1>
-        <a onclick="['/']">        
-          <header class="brand-name">          
-            <div>Logout</div>
-          </header>      
-        </a>
-        <div class='user'*ngFor="let user of usersWithAlbums">
-          <h2 (click)="viewUserProfile(user.id)">{{ user.name }}</h2>
-          <img [src]="getAvatarUrl('avatar.eps')" alt="{{ user.name }}'s avatar" class="avatar" />
+        <h1>Our users and their albums</h1>
+        <div (click)="viewUserProfile(user.id)" class='user'*ngFor="let user of usersWithAlbums">
+          <img src="../assets/avatar.jpg" alt="{{ user.name }}'s avatar" class="avatar" width="30px"/>
+          <h2 >{{ user.name }}</h2>
           <h3>Number of Albums:</h3>
           <p>{{ user.albums.length }}</p>
         </div>
