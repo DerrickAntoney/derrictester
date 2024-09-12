@@ -14,7 +14,6 @@ import { UserWithAlbums } from '../data.model';
         <h1>Users and Their Albums</h1>
         <div *ngFor="let user of usersWithAlbums">
           <h2>{{ user.name }}</h2>
-          <p>Email: {{ user.email }}</p>
           <h3>Albums:</h3>
           <ul>
             <li *ngFor="let album of user.albums">
@@ -25,7 +24,7 @@ import { UserWithAlbums } from '../data.model';
       </div>
 
   `,
-  styles: ``
+  styleUrls: ['home.component.css']
 })
 export class HomeComponent implements OnInit {
   usersWithAlbums: UserWithAlbums[] = [];
@@ -46,4 +45,5 @@ export class HomeComponent implements OnInit {
       }
     );
   }
+  
 }
